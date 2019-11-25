@@ -30,6 +30,10 @@ def register():
         return render_template('thanks.html', data=data)
     return render_template('register.html', form=registerform)
 
+@app.route('/results')
+def results():
+    thankfulness_descriptions = mongo.db.thankfulness.find({})
+    return render_template('results.html', data=thankfulness_descriptions)
 
 if __name__ == '__main__':
     app.run(debug=True)

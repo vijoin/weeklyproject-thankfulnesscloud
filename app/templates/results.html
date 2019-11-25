@@ -1,0 +1,14 @@
+{% extends 'bootstrap/base.html'%}
+
+{% block title %}
+Results
+{% endblock title %}
+
+{% block content %}
+<h1>What everybody is thankful for:</h1>
+<ul>
+    {% for item in data %}
+    <li> {{ item['description'] }} </li>
+    {% endfor %}
+</ul>
+{% endblock content %}
