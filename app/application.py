@@ -5,7 +5,7 @@ from flask_pymongo import PyMongo
 from forms.register import RegisterThankful
 
 
-app = Flask(__name__)
+application = app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 bootstrap = Bootstrap(app)
 
@@ -36,4 +36,4 @@ def results():
     return render_template('results.html', data=thankfulness_descriptions)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    application.run(debug=True, port=8080, host='0.0.0.0')
